@@ -1,0 +1,13 @@
+version: '3'
+services:
+  gatsby:
+    build:
+      context: ./app
+    ports:
+      - "8000:8000"
+    container_name: gatsby
+    stdin_open: true
+    volumes:
+       - ./app:/app
+       - /app/node_modules
+    command: gatsby develop --host=0.0.0.0
